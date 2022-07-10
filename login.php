@@ -3,9 +3,10 @@
 
     if(isset($_POST["submit"])){
         echo "<h1>Logged in successfully!</h1>";
-    }else{
-        echo "<h1>Incorrect login!</h1>";
     }
+    // else{
+    //     echo "<h1>Incorrect login!</h1>";
+    // }
 
     
 
@@ -53,7 +54,8 @@
                        </div>
                     </div>
                     <a href="#">Forgot Password?</a>
-                    <input type="submit" class="btn" value="Login" name="submit">
+                    <input type="submit" class="btn" value="Login" name="login">
+                    <input type="submit" class="btn" value="Sign Up" name="signup">
                 </form>
             </div>
         </div>

@@ -9,13 +9,21 @@
     // $samplePatient->setLname("Margate");
 
     // echo $samplePatient->getFullName();
-
+    
     include "config/database.php";
 
-    $sqlQuery = "SELECT * FROM patients_T";
+    // $sqlQuery = "SELECT * FROM patients_T";
+    $sqlQuery = "SELECT * FROM patients_T WHERE username = 'sampleUsername';";
     $sqlResult = mysqli_query($conn,$sqlQuery);
     $feedback = mysqli_fetch_all($sqlResult, MYSQLI_ASSOC);
+    // $feedback = mysqli_fetch_row();
+    // $resultCheck = mysqli_num_rows($sqlResult);
 
+    // while($row = mysqli_fetch_assoc($sqlResult);){
+    //     echo $row['patient_id'];
+    // }
+
+    echo "</br>";   
     foreach($feedback as $item){
         echo $item['patients_id'] . "</br>";
         echo $item['username'] . "</br>";

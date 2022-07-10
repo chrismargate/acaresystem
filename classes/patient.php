@@ -1,6 +1,7 @@
 <?php
     class Patient {
         private $patient_id;
+        private $date_created;
         private $username;
         private $password;
         private $fname;
@@ -26,6 +27,14 @@
         //     $this->contactNumber = $contactNumber;
         //     $this->email = $email;
         // }
+
+        public function getPatientid(){
+            return $this->patient_id;
+        }
+    
+        public function getDatecreated(){
+            return $this->date_created;
+        }
 
         public function getUsername(){
             return $this->username;
