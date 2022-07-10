@@ -31,6 +31,7 @@
 
         }else{
             // include "classes/patient.php";
+            // include "config/database.php";
             echo "<h1>You have registered successfully!</h1>";
         }
 
