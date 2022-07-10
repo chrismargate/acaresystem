@@ -10,7 +10,7 @@
         die("Connection failed $conn->connect_error");
     }
 
-    echo "CONNECTED!";
+    // echo "CONNECTED!";
 
     // function loginPatient($username,$password){
     //     $sqlQuery = "SELECT * FROM patients_T WHERE username = '$username';"'

@@ -18,31 +18,34 @@
         $fname = $_POST["fname"];
         $mname = $_POST["mname"];
         $lname = $_POST["lname"];
+        $gender = $_POST["gender"];
+        $dob = $_POST["dob"];
         $address = $_POST["address"];
-        $email = $_POST["email"];
         $contactNumber = $_POST["contactNumber"];
+        $email = $_POST["email"];
         $weight = $_POST["weight"];
         $height = $_POST["height"];
 
-        $requiredFields = array($username,$password,$fname,$lname,$address,$email,$contactNumber);
+        $requiredFields = array($username,$password,$fname,$lname,$gender,$dob,$address,$email,$contactNumber);
         $optionalFields = array($mname,$weight,$height);
 
         if(emptyFields($requiredFields)){
             echo "<h1>There was a required field you left blank. Please check again before submitting.</h1>";
-
         }else{
 
             $weight = 60.25;
+            $height = 164;
 
             $conn = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-            $sqlQuery = "INSERT INTO patients_T (date_created, username, password, fname, mname, lname, gender, dob, address, contact_number, email_address, weight_kg) VALUES ('2022-07-10 13:37:10.000000', '$username', '$password', '$fname', '$mname', '$lname', '', '2022-07-10', '$address', '$contactNumber', '$email', '$weight')";
+            $sqlQuery = "INSERT INTO patients_T (date_created, username, password, fname, mname, lname, gender, dob, address, contact_number, email_address, weight_kg) VALUES ('2022-07-10 13:37:10.000000', '$username', '$password', '$fname', '$mname', '$lname', '$gender', '$dob', '$address', '$contactNumber', '$email', '$weight','$height')";
 
-            if($conn->query($sqlQuery) === TRUE){
-                echo "<h1>You have registered successfully!</h1>";
-            }else {
-                echo "Error: " . $sqlQuery . "<br>" . $conn->error;
-              }
+            echo $sqlQuery;
 
+            // if($conn->query($sqlQuery) === TRUE){
+            //     echo "<h1>You have registered successfully!</h1>";
+            // }else {
+            //     echo "Error: " . $sqlQuery . "<br>" . $conn->error;
+            //   }
         }
 
     }
@@ -76,8 +79,21 @@
                 <label for="lname">Last name:</label>
                 <input type="text" name="lname">
                 </br>
-                <!-- <label for="gender">Gender:</label>
-                <input type="text" name="mname"> -->
+
+                <label for="gender">Gender:</label>
+                <select name="gender" id="gender">
+                
+                <option disabled selected value>Choose an option</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Non-binary">Non-binary</option>
+                </select>
+
+                </br>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob">
+                
+                </br>
 
                 <label for="address">Address:</label>
                 <input type="text" name="address">
