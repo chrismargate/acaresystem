@@ -30,6 +30,7 @@
             echo "<h1>There was a required field you left blank. Please check again before submitting.</h1>";
 
         }else{
+            // include "classes/patient.php";
             echo "<h1>You have registered successfully!</h1>";
         }
 
