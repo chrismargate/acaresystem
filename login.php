@@ -1,3 +1,18 @@
+<?php
+    session_start();
+
+    if(isset($_POST["submit"])){
+        echo "<h1>Logged in successfully!</h1>";
+    }else{
+        echo "<h1>Incorrect login!</h1>";
+    }
+
+    
+
+    
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +31,7 @@
                 <img src="img/bg.svg">
             </div>
             <div class="login-content">
-                <form action="index.html" method="POST">
+                <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                     <img src="img/avatar.svg">
                     <h2 class="title">Welcome</h2>
                        <div class="input-div one">
